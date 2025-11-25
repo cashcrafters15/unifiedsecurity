@@ -1095,3 +1095,240 @@
                     Transform your spaces with our professional horticulture services
                 </p>
             </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Aesthetics</h3>
+                        <p>Beautiful, well-maintained landscapes that enhance property value and appeal</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Better Air Quality</h3>
+                        <p>Improved air quality through strategic plant selection and placement</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Well-being Boost</h3>
+                        <p>Green spaces promote mental health and employee satisfaction</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Natural Cooling</h3>
+                        <p>Strategic planting reduces cooling costs and improves comfort</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Sustainability</h3>
+                        <p>Eco-friendly practices supporting environmental responsibility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Create Your Green Oasis</h2>
+            <p class="cta-subtitle">
+                Contact us for a comprehensive horticulture assessment and customized landscape solutions.
+            </p>
+            <a href="contact.html" class="btn btn-white">
+                <i class="fas fa-phone"></i> Get Horticulture Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>
+                        Unified Security & Facility Management Services Pvt. Ltd. is a multi-domain, integrated facility management company, 
+                        delivering world-class security, facility maintenance, horticulture, and manpower solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="security.html">Security Services</a></li>
+                        <li><a href="housekeeping.html">Housekeeping</a></li>
+                        <li><a href="horticulture.html">Horticulture</a></li>
+                        <li><a href="support.html">Support Staff</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Office No. 09, Hari Singh Market, Sector 63, Gurugram, Haryana, India</p>
+                    <p><i class="fas fa-phone"></i> +91 9873803921</p>
+                    <p><i class="fas fa-envelope"></i> info@unifiedfacility.in</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Unified Security & Facility Management Services Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Inline JavaScript -->
+    <script>
+        // ======== APP INITIALIZATION ========
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all components
+            initNavigation();
+            initAnimations();
+        });
+
+        // ======== NAVIGATION ========
+        function initNavigation() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const header = document.querySelector('.header');
+
+            // Mobile menu toggle
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('nav') && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            const offsetTop = target.offsetTop - 80;
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Hide/show header on scroll
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+        }
+
+        // ======== ANIMATIONS ========
+        function initAnimations() {
+            // Add staggered animations to cards
+            const cards = document.querySelectorAll('.service-detail, .benefit-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in');
+            });
+
+            // Parallax effect for hero section
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const shapes = heroSection.querySelectorAll('.floating-shape');
+                    
+                    shapes.forEach((shape, index) => {
+                        const speed = 0.5 + (index * 0.1);
+                        shape.style.transform = `translateY(${scrolled * speed}px)`;
+                    });
+                });
+            }
+        }
+
+        // Add CSS animations dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            .fade-in {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.8s ease;
+                animation-fill-mode: both;
+            }
+            
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            @keyframes float {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

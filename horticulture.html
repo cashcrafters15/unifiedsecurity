@@ -9,1137 +9,950 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Inline Critical CSS -->
     <style>
-        /* ======== CSS VARIABLES ======== */
         :root {
-          /* Colors */
-          --primary-color: #0052CC;
-          --secondary-color: #003D99;
-          --accent-color: #FF6B00;
-          --text-primary: #1A1A1A;
-          --text-secondary: #6B7280;
-          --text-light: #9CA3AF;
-          --light-bg: #F8F9FA;
-          --white: #FFFFFF;
-          --border-color: #E5E7EB;
-          --error-color: #EF4444;
-          --success-color: #10B981;
-          --warning-color: #F59E0B;
-          
-          /* Gradients */
-          --gradient: linear-gradient(135deg, #0052CC 0%, #003D99 100%);
-          --accent-gradient: linear-gradient(135deg, #FF6B00 0%, #FF8C42 100%);
-          --hero-gradient: linear-gradient(135deg, rgba(0, 82, 204, 0.05) 0%, rgba(255, 107, 0, 0.05) 100%);
-          
-          /* Shadows */
-          --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-          --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-          --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-          --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-          --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
-          
-          /* Transitions */
-          --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-          --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-          
-          /* Typography */
-          --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-          --font-size-xs: 0.75rem;
-          --font-size-sm: 0.875rem;
-          --font-size-base: 1rem;
-          --font-size-lg: 1.125rem;
-          --font-size-xl: 1.25rem;
-          --font-size-2xl: 1.5rem;
-          --font-size-3xl: 1.875rem;
-          --font-size-4xl: 2.25rem;
-          --font-size-5xl: 3rem;
-          
-          /* Spacing */
-          --spacing-xs: 0.25rem;
-          --spacing-sm: 0.5rem;
-          --spacing-md: 1rem;
-          --spacing-lg: 1.5rem;
-          --spacing-xl: 2rem;
-          --spacing-2xl: 3rem;
-          --spacing-3xl: 4rem;
-          
-          /* Border Radius */
-          --radius-sm: 0.25rem;
-          --radius-md: 0.5rem;
-          --radius-lg: 0.75rem;
-          --radius-xl: 1rem;
-          --radius-full: 9999px;
-          
-          /* Z-index */
-          --z-dropdown: 1000;
-          --z-sticky: 1020;
-          --z-fixed: 1030;
-          --z-modal-backdrop: 1040;
-          --z-modal: 1050;
-          --z-popover: 1060;
-          --z-tooltip: 1070;
-          --z-toast: 1080;
+            --primary-color: #1a1a1a;
+            --secondary-color: #0066cc;
+            --accent-color: #ff6b35;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --border-light: #e0e0e0;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --green-color: #2ecc71;
+            --nature-green: #27ae60;
         }
-
-        /* ======== RESET & BASE STYLES ======== */
+        
         * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        html {
-          scroll-behavior: smooth;
-          font-size: 16px;
-        }
-
+        
         body {
-          font-family: var(--font-family);
-          background: var(--white);
-          color: var(--text-primary);
-          line-height: 1.6;
-          overflow-x: hidden;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--primary-color);
+            overflow-x: hidden;
+            background: #ffffff;
         }
-
-        /* ======== CUSTOM SCROLLBAR ======== */
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
-          width: 8px;
-          height: 8px;
+            width: 8px;
         }
-
+        
         ::-webkit-scrollbar-track {
-          background: var(--light-bg);
+            background: #f1f1f1;
         }
-
+        
         ::-webkit-scrollbar-thumb {
-          background: var(--primary-color);
-          border-radius: var(--radius-sm);
+            background: var(--secondary-color);
+            border-radius: 4px;
         }
-
+        
         ::-webkit-scrollbar-thumb:hover {
-          background: var(--secondary-color);
+            background: #0052a3;
         }
-
-        /* ======== HEADER & NAVIGATION ======== */
-        .header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          z-index: var(--z-fixed);
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          box-shadow: var(--shadow-sm);
-          transition: var(--transition);
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            padding: 0;
         }
-
-        .header.scrolled {
-          box-shadow: var(--shadow-md);
+        
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-
-        .nav {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: var(--spacing-md) var(--spacing-lg);
-          max-width: 1200px;
-          margin: 0 auto;
+        
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
         }
-
-        .logo {
-          font-size: var(--font-size-2xl);
-          font-weight: 700;
-          color: var(--primary-color);
-          display: flex;
-          align-items: center;
-          gap: var(--spacing-sm);
-          text-decoration: none;
-          transition: var(--transition);
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
         }
-
-        .logo:hover {
-          transform: scale(1.05);
+        
+        .navbar-brand i {
+            margin-right: 10px;
+            color: var(--secondary-color);
         }
-
-        .logo i {
-          font-size: var(--font-size-3xl);
-          animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.1); }
-        }
-
-        .nav-menu {
-          display: flex;
-          list-style: none;
-          gap: var(--spacing-xs);
-          align-items: center;
-        }
-
-        .nav-item {
-          position: relative;
-        }
-
+        
         .nav-link {
-          color: var(--text-primary);
-          text-decoration: none;
-          font-weight: 500;
-          padding: var(--spacing-sm) var(--spacing-md);
-          transition: var(--transition);
-          display: flex;
-          align-items: center;
-          gap: var(--spacing-xs);
-          font-size: var(--font-size-sm);
-          border-radius: var(--radius-sm);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .nav-link::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 2px;
-          background: var(--primary-color);
-          transform: translateX(-50%);
-          transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::before {
-          width: 80%;
-        }
-
-        .nav-link:hover {
-          color: var(--primary-color);
-          background-color: rgba(0, 82, 204, 0.05);
-        }
-
-        .dropdown {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          background: var(--white);
-          border: 1px solid var(--border-color);
-          border-radius: var(--radius-md);
-          min-width: 200px;
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(-10px);
-          transition: var(--transition);
-          margin-top: var(--spacing-sm);
-          box-shadow: var(--shadow-lg);
-        }
-
-        .nav-item:hover .dropdown {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0);
-        }
-
-        .dropdown a {
-          display: block;
-          padding: var(--spacing-sm) var(--spacing-lg);
-          color: var(--text-primary);
-          text-decoration: none;
-          transition: var(--transition);
-          font-size: var(--font-size-sm);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .dropdown a::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 3px;
-          background: var(--primary-color);
-          transform: translateX(-100%);
-          transition: transform 0.3s ease;
-        }
-
-        .dropdown a:hover::before {
-          transform: translateX(0);
-        }
-
-        .dropdown a:hover {
-          background: var(--light-bg);
-          color: var(--primary-color);
-          padding-left: calc(var(--spacing-lg) + var(--spacing-sm));
-        }
-
-        .mobile-menu-toggle {
-          display: none;
-          flex-direction: column;
-          gap: var(--spacing-xs);
-          cursor: pointer;
-          padding: var(--spacing-sm);
-        }
-
-        .mobile-menu-toggle span {
-          width: 25px;
-          height: 2px;
-          background: var(--text-primary);
-          transition: var(--transition);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(1) {
-          transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(2) {
-          opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        /* ======== HERO SECTION ======== */
-        .hero {
-          min-height: 60vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          padding: 6.25rem var(--spacing-lg) 3.125rem;
-          background: var(--hero-gradient);
-          overflow: hidden;
-        }
-
-        .hero-bg-animation {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-          overflow: hidden;
-        }
-
-        .floating-shape {
-          position: absolute;
-          border-radius: var(--radius-full);
-          opacity: 0.08;
-          animation: float 20s infinite ease-in-out;
-        }
-
-        .shape-1 {
-          width: 300px;
-          height: 300px;
-          background: var(--primary-color);
-          top: 10%;
-          left: 10%;
-          animation-delay: 0s;
-        }
-
-        .shape-2 {
-          width: 200px;
-          height: 200px;
-          background: var(--accent-color);
-          bottom: 10%;
-          right: 10%;
-          animation-delay: 5s;
-        }
-
-        .shape-3 {
-          width: 150px;
-          height: 150px;
-          background: var(--primary-color);
-          top: 50%;
-          right: 20%;
-          animation-delay: 10s;
-        }
-
-        .shape-4 {
-          width: 100px;
-          height: 100px;
-          background: var(--accent-color);
-          bottom: 30%;
-          left: 5%;
-          animation-delay: 15s;
-        }
-
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0) rotate(0deg);
-          }
-          25% {
-            transform: translateY(-20px) rotate(5deg);
-          }
-          50% {
-            transform: translateY(-10px) rotate(-5deg);
-          }
-          75% {
-            transform: translateY(-30px) rotate(3deg);
-          }
-        }
-
-        .hero-content {
-          max-width: 1200px;
-          width: 100%;
-          z-index: 2;
-          text-align: center;
-        }
-
-        .hero-badge {
-          display: inline-block;
-          padding: var(--spacing-sm) var(--spacing-lg);
-          background: var(--accent-gradient);
-          color: var(--white);
-          border-radius: var(--radius-full);
-          font-size: var(--font-size-sm);
-          margin-bottom: var(--spacing-xl);
-          font-weight: 500;
-          animation: pulse 2s infinite;
-          box-shadow: var(--shadow-md);
-        }
-
-        .hero h1 {
-          font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
-          font-weight: 700;
-          margin-bottom: var(--spacing-xl);
-          line-height: 1.2;
-          color: var(--text-primary);
-          animation: fadeInUp 0.8s ease 0.2s;
-          animation-fill-mode: both;
-        }
-
-        .hero-subtitle {
-          font-size: var(--font-size-xl);
-          color: var(--text-secondary);
-          margin-bottom: var(--spacing-xl);
-          line-height: 1.6;
-          animation: fadeInUp 0.8s ease 0.4s;
-          animation-fill-mode: both;
-          max-width: 800px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        /* ======== LAYOUT ======== */
-        .section {
-          padding: var(--spacing-3xl) 0;
-          position: relative;
-        }
-
-        .section-light {
-          background: var(--light-bg);
-        }
-
-        .section-dark {
-          background: var(--white);
-        }
-
-        .section-header {
-          text-align: center;
-          margin-bottom: var(--spacing-3xl);
-          max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .section-title {
-          font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-4xl));
-          font-weight: 700;
-          margin-bottom: var(--spacing-lg);
-          color: var(--text-primary);
-          position: relative;
-          display: inline-block;
-        }
-
-        .section-title::after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 60px;
-          height: 4px;
-          background: var(--accent-gradient);
-          border-radius: var(--radius-sm);
-        }
-
-        .section-subtitle {
-          font-size: var(--font-size-xl);
-          color: var(--text-secondary);
-          line-height: 1.6;
-          margin-top: var(--spacing-lg);
-        }
-
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 var(--spacing-lg);
-        }
-
-        .grid {
-          display: grid;
-          gap: var(--spacing-xl);
-        }
-
-        .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
-        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-        .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-        .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-
-        /* ======== SERVICE DETAIL ======== */
-        .service-detail {
-          background: var(--white);
-          border-radius: var(--radius-lg);
-          padding: var(--spacing-2xl);
-          transition: var(--transition);
-          box-shadow: var(--shadow-md);
-          position: relative;
-          overflow: hidden;
-          animation: fadeInUp 0.8s ease;
-          animation-fill-mode: both;
-        }
-
-        .service-detail::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 4px;
-          background: var(--gradient);
-        }
-
-        .service-detail:hover {
-          transform: translateY(-10px);
-          box-shadow: var(--shadow-xl);
-        }
-
-        .service-icon {
-          width: 80px;
-          height: 80px;
-          background: rgba(0, 82, 204, 0.1);
-          border-radius: var(--radius-full);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: var(--font-size-2xl);
-          margin-bottom: var(--spacing-xl);
-          color: var(--primary-color);
-          transition: var(--transition);
-        }
-
-        .service-detail:hover .service-icon {
-          background: var(--gradient);
-          color: var(--white);
-          transform: scale(1.1) rotate(5deg);
-        }
-
-        .service-title {
-          font-size: var(--font-size-2xl);
-          font-weight: 600;
-          margin-bottom: var(--spacing-lg);
-          color: var(--text-primary);
-        }
-
-        .service-description {
-          color: var(--text-secondary);
-          line-height: 1.7;
-          font-size: var(--font-size-base);
-          margin-bottom: var(--spacing-lg);
-        }
-
-        .service-features {
-          list-style: none;
-          margin-bottom: var(--spacing-lg);
-        }
-
-        .service-features li {
-          display: flex;
-          align-items: flex-start;
-          margin-bottom: var(--spacing-sm);
-          color: var(--text-secondary);
-        }
-
-        .service-features i {
-          color: var(--primary-color);
-          margin-right: var(--spacing-sm);
-          margin-top: var(--spacing-xs);
-        }
-
-        /* ======== BENEFITS SECTION ======== */
-        .benefits-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: var(--spacing-xl);
-        }
-
-        .benefit-card {
-          background: var(--white);
-          border-radius: var(--radius-lg);
-          padding: var(--spacing-xl);
-          box-shadow: var(--shadow-md);
-          transition: var(--transition);
-          display: flex;
-          align-items: flex-start;
-        }
-
-        .benefit-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-xl);
-        }
-
-        .benefit-icon {
-          width: 50px;
-          height: 50px;
-          background: rgba(0, 82, 204, 0.1);
-          border-radius: var(--radius-full);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: var(--font-size-lg);
-          color: var(--primary-color);
-          margin-right: var(--spacing-lg);
-          flex-shrink: 0;
-        }
-
-        .benefit-content h3 {
-          font-size: var(--font-size-lg);
-          font-weight: 600;
-          margin-bottom: var(--spacing-sm);
-          color: var(--text-primary);
-        }
-
-        .benefit-content p {
-          color: var(--text-secondary);
-          line-height: 1.6;
-        }
-
-        /* ======== CTA SECTION ======== */
-        .cta-section {
-          background: var(--gradient);
-          padding: var(--spacing-3xl) var(--spacing-lg);
-          text-align: center;
-          color: var(--white);
-        }
-
-        .cta-title {
-          font-size: var(--font-size-4xl);
-          font-weight: 700;
-          margin-bottom: var(--spacing-lg);
-        }
-
-        .cta-subtitle {
-          font-size: var(--font-size-xl);
-          margin-bottom: var(--spacing-xl);
-          max-width: 800px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .btn {
-          padding: var(--spacing-lg) var(--spacing-xl);
-          border: none;
-          color: var(--white);
-          text-decoration: none;
-          border-radius: var(--radius-md);
-          font-weight: 600;
-          transition: var(--transition);
-          display: inline-flex;
-          align-items: center;
-          gap: var(--spacing-sm);
-          cursor: pointer;
-          font-size: var(--font-size-base);
-          position: relative;
-          overflow: hidden;
-          box-shadow: var(--shadow-md);
-        }
-
-        .btn::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 0;
-          height: 0;
-          border-radius: var(--radius-full);
-          background: rgba(255, 255, 255, 0.2);
-          transform: translate(-50%, -50%);
-          transition: width 0.6s, height 0.6s;
-        }
-
-        .btn:hover::before {
-          width: 300px;
-          height: 300px;
-        }
-
-        .btn-white {
-          background: var(--white);
-          color: var(--primary-color);
-        }
-
-        .btn-white:hover {
-          transform: translateY(-3px);
-          box-shadow: var(--shadow-xl);
-        }
-
-        /* ======== FOOTER ======== */
-        .footer {
-          background: var(--text-primary);
-          color: var(--white);
-          padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-xl);
-        }
-
-        .footer-content {
-          max-width: 1200px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: var(--spacing-xl);
-          margin-bottom: var(--spacing-xl);
-        }
-
-        .footer-column h3 {
-          font-size: var(--font-size-xl);
-          font-weight: 600;
-          margin-bottom: var(--spacing-lg);
-          position: relative;
-          padding-bottom: var(--spacing-sm);
-        }
-
-        .footer-column h3::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 40px;
-          height: 3px;
-          background: var(--accent-color);
-        }
-
-        .footer-column p {
-          color: rgba(255, 255, 255, 0.7);
-          margin-bottom: var(--spacing-lg);
-          line-height: 1.6;
-        }
-
-        .footer-links {
-          list-style: none;
-        }
-
-        .footer-links li {
-          margin-bottom: var(--spacing-sm);
-        }
-
-        .footer-links a {
-          color: rgba(255, 255, 255, 0.7);
-          text-decoration: none;
-          transition: var(--transition);
-          display: inline-flex;
-          align-items: center;
-          gap: var(--spacing-xs);
-        }
-
-        .footer-links a:hover {
-          color: var(--white);
-          gap: var(--spacing-sm);
-        }
-
-        .social-links {
-          display: flex;
-          gap: var(--spacing-lg);
-          margin-top: var(--spacing-lg);
-        }
-
-        .social-links a {
-          width: 40px;
-          height: 40px;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: var(--radius-full);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--white);
-          transition: var(--transition);
-        }
-
-        .social-links a:hover {
-          background: var(--accent-color);
-          transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-          text-align: center;
-          padding-top: var(--spacing-xl);
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          color: rgba(255, 255, 255, 0.7);
-          font-size: var(--font-size-sm);
-        }
-
-        /* ======== ANIMATIONS ======== */
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        /* ======== RESPONSIVE DESIGN ======== */
-        @media (max-width: 768px) {
-          .nav {
-            padding: var(--spacing-sm) var(--spacing-md);
-          }
-
-          .nav-menu {
-            display: none;
+            color: var(--primary-color) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
             position: absolute;
-            top: 100%;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 10px 0;
+            margin-top: 15px;
+        }
+        
+        .dropdown-item {
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-item:hover {
+            background: var(--bg-light);
+            color: var(--secondary-color);
+            padding-left: 25px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 70vh;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-particles {
+            position: absolute;
+            top: 0;
             left: 0;
             width: 100%;
-            background: var(--white);
-            flex-direction: column;
-            padding: var(--spacing-lg);
-            gap: var(--spacing-sm);
-            box-shadow: var(--shadow-lg);
-          }
-
-          .nav-menu.active {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+                opacity: 0.3;
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        /* Service Section */
+        .service-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .service-detail {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+        
+        .service-detail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--nature-green), var(--green-color));
+        }
+        
+        .service-detail:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--nature-green), var(--green-color));
+            border-radius: 20px;
             display: flex;
-          }
-
-          .dropdown {
-            position: static;
-            opacity: 1;
-            visibility: visible;
-            transform: none;
-            margin-top: 0;
-            margin-left: var(--spacing-lg);
-            box-shadow: none;
-            border: none;
-          }
-
-          .mobile-menu-toggle {
-            display: flex;
-          }
-
-          .hero {
-            padding: 6.25rem var(--spacing-md) 3.125rem;
-          }
-
-          .section {
-            padding: var(--spacing-2xl) 0;
-          }
-
-          .container {
-            padding: 0 var(--spacing-md);
-          }
-
-          .benefits-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .footer-content {
-            grid-template-columns: 1fr;
-            text-align: center;
-          }
-
-          .footer-column h3::after {
-            left: 50%;
-            transform: translateX(-50%);
-          }
-
-          .social-links {
+            align-items: center;
             justify-content: center;
-          }
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .service-detail:hover .service-icon {
+            transform: rotate(10deg) scale(1.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .service-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .service-features li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+        
+        .service-features i {
+            color: var(--success-color);
+            margin-right: 15px;
+            margin-top: 3px;
+            font-size: 1.2rem;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--nature-green), var(--green-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .benefit-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .benefit-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 250px;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .process-timeline {
+            position: relative;
+            padding: 50px 0;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 80%;
+            background: linear-gradient(180deg, var(--nature-green), var(--green-color));
+            transform: translate(-50%, -50%);
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--nature-green), var(--green-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        .process-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            flex: 1;
+            margin: 0 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:nth-child(even) .process-content {
+            text-align: right;
+        }
+        
+        .process-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+        
+        .process-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .process-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--nature-green), var(--green-color));
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+        
+        .btn-cta {
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: white;
+            color: var(--nature-green);
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            color: var(--green-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer ul li a:hover {
+            color: white;
+            gap: 12px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .service-title {
+                font-size: 1.5rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav">
-            <a href="index.html" class="logo">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
                 <i class="fas fa-shield-alt"></i>
                 Unified Security
             </a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown">
-                        <a href="security.html">Security Services</a>
-                        <a href="housekeeping.html">Housekeeping</a>
-                        <a href="horticulture.html">Horticulture</a>
-                        <a href="support.html">Support Staff</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="testimonials.html" class="nav-link">Testimonials</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="mobile-menu-toggle" id="mobileMenuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="security.html">Security Services</a></li>
+                            <li><a class="dropdown-item" href="housekeeping.html">Housekeeping</a></li>
+                            <li><a class="dropdown-item" href="horticulture.html">Horticulture</a></li>
+                            <li><a class="dropdown-item" href="support.html">Support Staff</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg-animation">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-            <div class="floating-shape shape-4"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-leaf"></i> Professional Horticulture Services
+    <section class="hero-section">
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-70">
+                <div class="col-lg-12">
+                    <div class="hero-content text-center" data-aos="fade-up" data-aos-duration="1000">
+                        <h1 class="hero-title">Beautiful Green Spaces</h1>
+                        <p class="hero-subtitle">Creating and maintaining beautiful green spaces that enhance aesthetics, air quality, and employee well-being through sustainable horticulture practices.</p>
+                    </div>
+                </div>
             </div>
-            <h1>Beautiful Green Spaces</h1>
-            <p class="hero-subtitle">
-                Creating and maintaining beautiful green spaces that enhance aesthetics and well-being 
-                through sustainable horticulture practices.
-            </p>
         </div>
     </section>
 
     <!-- Landscape Planning Section -->
-    <section class="section section-light">
+    <section class="service-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Landscape Planning & Development</h2>
-                <p class="section-subtitle">
-                    Complete landscape design and implementation services transforming spaces into beautiful environments
-                </p>
-            </div>
-            <div class="service-detail">
-                <div class="service-icon">
-                    <i class="fas fa-seedling"></i>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <div class="service-detail">
+                        <div class="service-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h2 class="service-title">Landscape Planning & Development</h2>
+                        <p class="service-description">Complete landscape design and implementation services transforming spaces into beautiful, functional environments. Our expert team combines creativity with technical expertise to deliver stunning landscapes.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Comprehensive landscape design and planning</li>
+                            <li><i class="fas fa-check-circle"></i> Professional soil testing and preparation</li>
+                            <li><i class="fas fa-check-circle"></i> Strategic plantation of trees, shrubs, and seasonal flowers</li>
+                            <li><i class="fas fa-check-circle"></i> Modern irrigation system installation and setup</li>
+                            <li><i class="fas fa-check-circle"></i> Seasonal garden enhancements and updates</li>
+                            <li><i class="fas fa-check-circle"></i> Hardscape elements including pathways and patios</li>
+                            <li><i class="fas fa-check-circle"></i> Water features and decorative elements</li>
+                        </ul>
+                    </div>
                 </div>
-                <h3 class="service-title">Custom Landscape Design</h3>
-                <p class="service-description">
-                    Complete landscape design and implementation services transforming spaces into beautiful, functional environments. 
-                    Our expert team combines creativity with technical expertise to deliver stunning landscapes.
-                </p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Comprehensive landscape design and planning</li>
-                    <li><i class="fas fa-check"></i> Professional soil testing and preparation</li>
-                    <li><i class="fas fa-check"></i> Strategic plantation of trees, shrubs, and seasonal flowers</li>
-                    <li><i class="fas fa-check"></i> Modern irrigation system installation and setup</li>
-                    <li><i class="fas fa-check"></i> Seasonal garden enhancements and updates</li>
-                    <li><i class="fas fa-check"></i> Hardscape elements including pathways and patios</li>
-                    <li><i class="fas fa-check"></i> Water features and decorative elements</li>
-                </ul>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
+                    <img src="https://picsum.photos/seed/landscape-planning/600/500.jpg" alt="Landscape Planning" class="img-fluid rounded-4 shadow-lg">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Outdoor Maintenance Section -->
-    <section class="section section-dark">
+    <section class="service-section" style="background: var(--bg-light);">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Outdoor Landscape Maintenance</h2>
-                <p class="section-subtitle">
-                    Regular maintenance services ensuring your outdoor spaces remain vibrant and well-maintained
-                </p>
-            </div>
-            <div class="service-detail">
-                <div class="service-icon">
-                    <i class="fas fa-tree"></i>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
+                    <div class="service-detail">
+                        <div class="service-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h2 class="service-title">Outdoor Landscape Maintenance</h2>
+                        <p class="service-description">Regular maintenance services ensuring your outdoor spaces remain vibrant, healthy, and well-maintained throughout the year. Our maintenance programs are customized to your specific landscape needs.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Professional lawn mowing and edging</li>
+                            <li><i class="fas fa-check-circle"></i> Regular trimming and pruning of plants and trees</li>
+                            <li><i class="fas fa-check-circle"></i> Scheduled fertilization and soil treatment</li>
+                            <li><i class="fas fa-check-circle"></i> Pest control and disease management</li>
+                            <li><i class="fas fa-check-circle"></i> Seasonal replanting and garden renovation</li>
+                            <li><i class="fas fa-check-circle"></i> Leaf litter and debris cleaning</li>
+                            <li><i class="fas fa-check-circle"></i> Irrigation system maintenance and repair</li>
+                        </ul>
+                    </div>
                 </div>
-                <h3 class="service-title">Ongoing Garden Care</h3>
-                <p class="service-description">
-                    Regular maintenance services ensuring your outdoor spaces remain vibrant, healthy, and well-maintained throughout 
-                    the year. Our maintenance programs are customized to your specific landscape needs.
-                </p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Professional lawn mowing and edging</li>
-                    <li><i class="fas fa-check"></i> Regular trimming and pruning of plants and trees</li>
-                    <li><i class="fas fa-check"></i> Scheduled fertilization and soil treatment</li>
-                    <li><i class="fas fa-check"></i> Pest control and disease management</li>
-                    <li><i class="fas fa-check"></i> Seasonal replanting and garden renovation</li>
-                    <li><i class="fas fa-check"></i> Leaf litter and debris cleaning</li>
-                    <li><i class="fas fa-check"></i> Irrigation system maintenance and repair</li>
-                </ul>
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <img src="https://picsum.photos/seed/outdoor-maintenance/600/500.jpg" alt="Outdoor Maintenance" class="img-fluid rounded-4 shadow-lg">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Indoor Plants Section -->
-    <section class="section section-light">
+    <section class="service-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Indoor Plant Management</h2>
-                <p class="section-subtitle">
-                    Professional indoor plant services enhancing workspaces with greenery
-                </p>
-            </div>
-            <div class="service-detail">
-                <div class="service-icon">
-                    <i class="fas fa-home"></i>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <div class="service-detail">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h2 class="service-title">Indoor Plant Management</h2>
+                        <p class="service-description">Professional indoor plant services enhancing workspaces with greenery that improves air quality and creates a pleasant atmosphere. We handle everything from selection to ongoing maintenance.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Office lobby and reception area plants</li>
+                            <li><i class="fas fa-check-circle"></i> Cabin and workspace plant arrangements</li>
+                            <li><i class="fas fa-check-circle"></i> Air-purifying and decorative indoor plants</li>
+                            <li><i class="fas fa-check-circle"></i> Regular watering, pruning, and plant care</li>
+                            <li><i class="fas fa-check-circle"></i> Plant rotation and replacement services</li>
+                            <li><i class="fas fa-check-circle"></i> Custom planters and decorative containers</li>
+                            <li><i class="fas fa-check-circle"></i> Indoor garden design and installation</li>
+                        </ul>
+                    </div>
                 </div>
-                <h3 class="service-title">Interior Green Solutions</h3>
-                <p class="service-description">
-                    Professional indoor plant services enhancing workspaces with greenery that improves air quality and creates 
-                    a pleasant atmosphere. We handle everything from selection to ongoing maintenance.
-                </p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Office lobby and reception area plants</li>
-                    <li><i class="fas fa-check"></i> Cabin and workspace plant arrangements</li>
-                    <li><i class="fas fa-check"></i> Air-purifying and decorative indoor plants</li>
-                    <li><i class="fas fa-check"></i> Regular watering, pruning, and plant care</li>
-                    <li><i class="fas fa-check"></i> Plant rotation and replacement services</li>
-                    <li><i class="fas fa-check"></i> Custom planters and decorative containers</li>
-                    <li><i class="fas fa-check"></i> Indoor garden design and installation</li>
-                </ul>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
+                    <img src="https://picsum.photos/seed/indoor-plants/600/500.jpg" alt="Indoor Plants" class="img-fluid rounded-4 shadow-lg">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Environmental Enhancement Section -->
-    <section class="section section-dark">
+    <section class="service-section" style="background: var(--bg-light);">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Environmental Enhancement Services</h2>
-                <p class="section-subtitle">
-                    Specialized services for creating unique green spaces and environmental improvement
-                </p>
-            </div>
-            <div class="service-detail">
-                <div class="service-icon">
-                    <i class="fas fa-leaf"></i>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
+                    <div class="service-detail">
+                        <div class="service-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h2 class="service-title">Environmental Enhancement Services</h2>
+                        <p class="service-description">Specialized services for creating unique green spaces and environmental improvement, transforming ordinary spaces into extraordinary environments with sustainable practices.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Terrace and rooftop garden development</li>
+                            <li><i class="fas fa-check-circle"></i> Vertical garden and green wall installation</li>
+                            <li><i class="fas fa-check-circle"></i> Rock gardens and Zen garden creation</li>
+                            <li><i class="fas fa-check-circle"></i> Decorative pathways and walkway design</li>
+                            <li><i class="fas fa-check-circle"></i> Drip irrigation and water-efficient systems</li>
+                            <li><i class="fas fa-check-circle"></i> Eco-friendly pest control solutions</li>
+                            <li><i class="fas fa-check-circle"></i> Seasonal flower bed design and maintenance</li>
+                        </ul>
+                    </div>
                 </div>
-                <h3 class="service-title">Sustainable Green Solutions</h3>
-                <p class="service-description">
-                    Specialized services for creating unique green spaces including vertical gardens, terraces, and themed landscapes 
-                    that transform ordinary spaces into extraordinary environments.
-                </p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Terrace and rooftop garden development</li>
-                    <li><i class="fas fa-check"></i> Vertical garden and green wall installation</li>
-                    <li><i class="fas fa-check"></i> Rock gardens and Zen garden creation</li>
-                    <li><i class="fas fa-check"></i> Decorative pathways and walkway design</li>
-                    <li><i class="fas fa-check"></i> Drip irrigation and water-efficient systems</li>
-                    <li><i class="fas fa-check"></i> Eco-friendly pest control solutions</li>
-                    <li><i class="fas fa-check"></i> Seasonal flower bed design and maintenance</li>
-                </ul>
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <img src="https://picsum.photos/seed/environmental-enhancement/600/500.jpg" alt="Environmental Enhancement" class="img-fluid rounded-4 shadow-lg">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sustainable Practices Section -->
-    <section class="section section-light">
+    <!-- Gallery Section -->
+    <section class="gallery-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sustainable Horticulture Practices</h2>
-                <p class="section-subtitle">
-                    Environmentally responsible horticulture practices promoting sustainability
-                </p>
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="display-5 fw-bold">Our Green Portfolio</h2>
+                <p class="lead">Showcasing our expertise in creating and maintaining beautiful landscapes</p>
             </div>
-            <div class="service-detail">
-                <div class="service-icon">
-                    <i class="fas fa-globe"></i>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <img src="https://picsum.photos/seed/garden1/400/250.jpg" alt="Garden 1">
+                    <div class="gallery-overlay">
+                        <h4>Corporate Garden</h4>
+                        <p>Modern corporate landscape design</p>
+                    </div>
                 </div>
-                <h3 class="service-title">Eco-Friendly Approaches</h3>
-                <p class="service-description">
-                    Environmentally responsible horticulture practices promoting sustainability while maintaining beautiful landscapes. 
-                    We focus on water conservation, organic methods, and biodiversity.
-                </p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Water-wise landscaping and xeriscaping</li>
-                    <li><i class="fas fa-check"></i> Organic fertilization and soil management</li>
-                    <li><i class="fas fa-check"></i> Native plant species promotion</li>
-                    <li><i class="fas fa-check"></i> Composting and organic waste recycling</li>
-                    <li><i class="fas fa-check"></i> Biodiversity enhancement programs</li>
-                    <li><i class="fas fa-check"></i> Rainwater harvesting integration</li>
-                    <li><i class="fas fa-check"></i> Carbon footprint reduction initiatives</li>
-                </ul>
+                <div class="gallery-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <img src="https://picsum.photos/seed/garden2/400/250.jpg" alt="Garden 2">
+                    <div class="gallery-overlay">
+                        <h4>Residential Complex</h4>
+                        <p>Complete residential landscaping</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <img src="https://picsum.photos/seed/garden3/400/250.jpg" alt="Garden 3">
+                    <div class="gallery-overlay">
+                        <h4>Industrial Campus</h4>
+                        <p>Large-scale landscape maintenance</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <img src="https://picsum.photos/seed/garden4/400/250.jpg" alt="Garden 4">
+                    <div class="gallery-overlay">
+                        <h4>Retail Space</h4>
+                        <p>Commercial landscape design</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <img src="https://picsum.photos/seed/garden5/400/250.jpg" alt="Garden 5">
+                    <div class="gallery-overlay">
+                        <h4>Public Park</h4>
+                        <p>Public space landscaping</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                    <img src="https://picsum.photos/seed/garden6/400/250.jpg" alt="Garden 6">
+                    <div class="gallery-overlay">
+                        <h4>Hotel Resort</h4>
+                        <p>Hospitality landscaping</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="section section-dark">
+    <section class="benefits-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Client Benefits</h2>
-                <p class="section-subtitle">
-                    Transform your spaces with our professional horticulture services
-                </p>
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="display-5 fw-bold">Client Benefits</h2>
+                <p class="lead">Transform your spaces with our professional horticulture services</p>
             </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Enhanced Aesthetics</h3>
-                        <p>Beautiful, well-maintained landscapes that enhance property value and appeal</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-lungs"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Better Air Quality</h3>
-                        <p>Improved air quality through strategic plant selection and placement</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Enhanced Aesthetics</h3>
+                            <p>Beautiful, well-maintained landscapes that enhance property value and appeal</p>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-smile"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Well-being Boost</h3>
-                        <p>Green spaces promote mental health and employee satisfaction</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-thermometer-half"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Natural Cooling</h3>
-                        <p>Strategic planting reduces cooling costs and improves comfort</p>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lungs"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Better Air Quality</h3>
+                            <p>Improved air quality through strategic plant selection and placement</p>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-certificate"></i>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Well-being Boost</h3>
+                            <p>Green spaces promote mental health and employee satisfaction</p>
+                        </div>
                     </div>
-                    <div class="benefit-content">
-                        <h3>Sustainability</h3>
-                        <p>Eco-friendly practices supporting environmental responsibility</p>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Natural Cooling</h3>
+                            <p>Strategic planting reduces cooling costs and improves comfort</p>
+                        </div>
                     </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Sustainability</h3>
+                            <p>Eco-friendly practices supporting environmental responsibility</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="display-5 fw-bold">Our Horticulture Process</h2>
+                <p class="lead">Systematic approach to creating and maintaining beautiful landscapes</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Site Assessment</h3>
+                        <p class="process-description">Comprehensive site analysis and soil testing to understand environmental conditions and requirements</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="process-content">
+                        <h3 class="process-title">Design & Planning</h3>
+                        <p class="process-description">Customized landscape design and planning tailored to client needs and site conditions</p>
+                    </div>
+                    <div class="process-number">2</div>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Implementation</h3>
+                        <p class="process-description">Professional installation of plants, irrigation systems, and hardscape elements</p>
+                    </div>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="process-content">
+                        <h3 class="process-title">Maintenance</h3>
+                        <p class="process-description">Ongoing care, pruning, fertilization, and seasonal adjustments</p>
+                    </div>
+                    <div class="process-number">4</div>
+                </div>
+                <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <div class="process-content">
+                        <h3 class="process-title">Monitoring</h3>
+                        <p class="process-description">Regular inspections, health assessments, and performance tracking</p>
+                    </div>
+                    <div class="process-number">5</div>
                 </div>
             </div>
         </div>
@@ -1147,188 +960,103 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
+        <div class="container" data-aos="zoom-in" data-aos-duration="800">
             <h2 class="cta-title">Create Your Green Oasis</h2>
-            <p class="cta-subtitle">
-                Contact us for a comprehensive horticulture assessment and customized landscape solutions.
-            </p>
-            <a href="contact.html" class="btn btn-white">
-                <i class="fas fa-phone"></i> Get Horticulture Consultation
+            <p class="cta-subtitle">Contact us for a comprehensive horticulture assessment and customized landscape solutions.</p>
+            <a href="contact.html" class="btn-cta">
+                <i class="fas fa-phone"></i>
+                Get Horticulture Consultation
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <p>
-                        Unified Security & Facility Management Services Pvt. Ltd. is a multi-domain, integrated facility management company, 
-                        delivering world-class security, facility maintenance, horticulture, and manpower solutions.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>About Us</h5>
+                    <p>Unified Security & Facility Management Services Pvt. Ltd. is India's leading integrated facility management provider, offering end-to-end solutions in security, housekeeping, horticulture, and technical maintenance.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <div class="col-lg-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="security.html">Security Services</a></li>
-                        <li><a href="housekeeping.html">Housekeeping</a></li>
-                        <li><a href="horticulture.html">Horticulture</a></li>
-                        <li><a href="support.html">Support Staff</a></li>
+                <div class="col-lg-3 mb-4">
+                    <h5>Our Services</h5>
+                    <ul>
+                        <li><a href="security.html"><i class="fas fa-chevron-right"></i> Security Services</a></li>
+                        <li><a href="housekeeping.html"><i class="fas fa-chevron-right"></i> Housekeeping</a></li>
+                        <li><a href="horticulture.html"><i class="fas fa-chevron-right"></i> Horticulture</a></li>
+                        <li><a href="support.html"><i class="fas fa-chevron-right"></i> Support Staff</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Office No. 09, Hari Singh Market, Sector 63, Gurugram, Haryana, India</p>
-                    <p><i class="fas fa-phone"></i> +91 9873803921</p>
-                    <p><i class="fas fa-envelope"></i> info@unifiedfacility.in</p>
+                <div class="col-lg-3 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Office No. 09, Hari Singh Market, Sector 63, Gurugram, Haryana, India</a></li>
+                        <li><a href="tel:+919873803921"><i class="fas fa-phone"></i> +91 9873803921</a></li>
+                        <li><a href="mailto:info@unifiedfacility.in"><i class="fas fa-envelope"></i> info@unifiedfacility.in</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2023 Unified Security & Facility Management Services Pvt. Ltd. All Rights Reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Unified Security & Facility Management Services Pvt. Ltd. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Inline JavaScript -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // ======== APP INITIALIZATION ========
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all components
-            initNavigation();
-            initAnimations();
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            duration: 800
         });
 
-        // ======== NAVIGATION ========
-        function initNavigation() {
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const navMenu = document.getElementById('navMenu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const header = document.querySelector('.header');
-
-            // Mobile menu toggle
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', () => {
-                    navMenu.classList.toggle('active');
-                    mobileMenuToggle.classList.toggle('active');
-                });
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
+        });
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('nav') && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                }
-            });
-
-            // Smooth scrolling for navigation links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    
-                    if (href.startsWith('#')) {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            const offsetTop = target.offsetTop - 80;
-                            window.scrollTo({
-                                top: offsetTop,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-
-            // Header scroll effect
-            let lastScrollTop = 0;
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-
-                // Hide/show header on scroll
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    header.style.transform = 'translateY(-100%)';
-                } else {
-                    header.style.transform = 'translateY(0)';
-                }
-                
-                lastScrollTop = scrollTop;
-            });
-        }
-
-        // ======== ANIMATIONS ========
-        function initAnimations() {
-            // Add staggered animations to cards
-            const cards = document.querySelectorAll('.service-detail, .benefit-card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.classList.add('fade-in');
-            });
-
-            // Parallax effect for hero section
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                window.addEventListener('scroll', () => {
-                    const scrolled = window.pageYOffset;
-                    const shapes = heroSection.querySelectorAll('.floating-shape');
-                    
-                    shapes.forEach((shape, index) => {
-                        const speed = 0.5 + (index * 0.1);
-                        shape.style.transform = `translateY(${scrolled * speed}px)`;
-                    });
-                });
+        // Generate particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('heroParticles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = Math.random() * 10 + 5 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 20 + 20) + 's';
+                particlesContainer.appendChild(particle);
             }
         }
 
-        // Add CSS animations dynamically
-        const style = document.createElement('style');
-        style.textContent = `
-            .fade-in {
-                opacity: 0;
-                transform: translateY(30px);
-                transition: all 0.8s ease;
-                animation-fill-mode: both;
-            }
-            
-            .fade-in.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            
-            @keyframes float {
-                0%, 100% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(-20px);
-                }
-            }
-        `;
-        document.head.appendChild(style);
+        // Initialize particles on page load
+        document.addEventListener('DOMContentLoaded', createParticles);
     </script>
 </body>
 </html>

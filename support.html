@@ -3,1415 +3,1155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Center - Unified Security & Facility Management Services Pvt. Ltd.</title>
-    <meta name="description" content="Find help and contact Unified Security & Facility Management for all your service needs.">
+    <title>Support Staff - Unified Security & Facility Management Services Pvt. Ltd.</title>
+    <meta name="description" content="Trained and verified manpower for office operations, pantry services, and utility support.">
+    <meta name="keywords" content="support staff, office boys, pantry services, utility staff, manpower solutions, office support">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Inline Critical CSS -->
     <style>
-        /* ======== CSS VARIABLES ======== */
         :root {
-          /* Colors */
-          --primary-color: #0052CC;
-          --secondary-color: #003D99;
-          --accent-color: #FF6B00;
-          --text-primary: #1A1A1A;
-          --text-secondary: #6B7280;
-          --text-light: #9CA3AF;
-          --light-bg: #F8F9FA;
-          --white: #FFFFFF;
-          --border-color: #E5E7EB;
-          --error-color: #EF4444;
-          --success-color: #10B981;
-          --warning-color: #F59E0B;
-          
-          /* Gradients */
-          --gradient: linear-gradient(135deg, #0052CC 0%, #003D99 100%);
-          --accent-gradient: linear-gradient(135deg, #FF6B00 0%, #FF8C42 100%);
-          --hero-gradient: linear-gradient(135deg, rgba(0, 82, 204, 0.05) 0%, rgba(255, 107, 0, 0.05) 100%);
-          
-          /* Shadows */
-          --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-          --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-          --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-          --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-          --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
-          
-          /* Transitions */
-          --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-          --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-          
-          /* Typography */
-          --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-          --font-size-xs: 0.75rem;
-          --font-size-sm: 0.875rem;
-          --font-size-base: 1rem;
-          --font-size-lg: 1.125rem;
-          --font-size-xl: 1.25rem;
-          --font-size-2xl: 1.5rem;
-          --font-size-3xl: 1.875rem;
-          --font-size-4xl: 2.25rem;
-          --font-size-5xl: 3rem;
-          
-          /* Spacing */
-          --spacing-xs: 0.25rem;
-          --spacing-sm: 0.5rem;
-          --spacing-md: 1rem;
-          --spacing-lg: 1.5rem;
-          --spacing-xl: 2rem;
-          --spacing-2xl: 3rem;
-          --spacing-3xl: 4rem;
-          
-          /* Border Radius */
-          --radius-sm: 0.25rem;
-          --radius-md: 0.5rem;
-          --radius-lg: 0.75rem;
-          --radius-xl: 1rem;
-          --radius-full: 9999px;
-          
-          /* Z-index */
-          --z-dropdown: 1000;
-          --z-sticky: 1020;
-          --z-fixed: 1030;
-          --z-modal-backdrop: 1040;
-          --z-modal: 1050;
-          --z-popover: 1060;
-          --z-tooltip: 1070;
-          --z-toast: 1080;
+            --primary-color: #1a1a1a;
+            --secondary-color: #0066cc;
+            --accent-color: #ff6b35;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --border-light: #e0e0e0;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
         }
-
-        /* ======== RESET & BASE STYLES ======== */
+        
         * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        html {
-          scroll-behavior: smooth;
-          font-size: 16px;
-        }
-
+        
         body {
-          font-family: var(--font-family);
-          background: var(--white);
-          color: var(--text-primary);
-          line-height: 1.6;
-          overflow-x: hidden;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* ======== CUSTOM SCROLLBAR ======== */
-        ::-webkit-scrollbar {
-          width: 8px;
-          height: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: var(--light-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: var(--primary-color);
-          border-radius: var(--radius-sm);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: var(--secondary-color);
-        }
-
-        /* ======== HEADER & NAVIGATION ======== */
-        .header {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          z-index: var(--z-fixed);
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          box-shadow: var(--shadow-sm);
-          transition: var(--transition);
-        }
-
-        .header.scrolled {
-          box-shadow: var(--shadow-md);
-        }
-
-        .nav {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: var(--spacing-md) var(--spacing-lg);
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .logo {
-          font-size: var(--font-size-2xl);
-          font-weight: 700;
-          color: var(--primary-color);
-          display: flex;
-          align-items: center;
-          gap: var(--spacing-sm);
-          text-decoration: none;
-          transition: var(--transition);
-        }
-
-        .logo:hover {
-          transform: scale(1.05);
-        }
-
-        .logo i {
-          font-size: var(--font-size-3xl);
-          animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.1); }
-        }
-
-        .nav-menu {
-          display: flex;
-          list-style: none;
-          gap: var(--spacing-xs);
-          align-items: center;
-        }
-
-        .nav-item {
-          position: relative;
-        }
-
-        .nav-link {
-          color: var(--text-primary);
-          text-decoration: none;
-          font-weight: 500;
-          padding: var(--spacing-sm) var(--spacing-md);
-          transition: var(--transition);
-          display: flex;
-          align-items: center;
-          gap: var(--spacing-xs);
-          font-size: var(--font-size-sm);
-          border-radius: var(--radius-sm);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .nav-link::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 2px;
-          background: var(--primary-color);
-          transform: translateX(-50%);
-          transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::before {
-          width: 80%;
-        }
-
-        .nav-link:hover {
-          color: var(--primary-color);
-          background-color: rgba(0, 82, 204, 0.05);
-        }
-
-        .dropdown {
-          position: absolute;
-          top: 100%;
-          left: 0;
-          background: var(--white);
-          border: 1px solid var(--border-color);
-          border-radius: var(--radius-md);
-          min-width: 200px;
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(-10px);
-          transition: var(--transition);
-          margin-top: var(--spacing-sm);
-          box-shadow: var(--shadow-lg);
-        }
-
-        .nav-item:hover .dropdown {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0);
-        }
-
-        .dropdown a {
-          display: block;
-          padding: var(--spacing-sm) var(--spacing-lg);
-          color: var(--text-primary);
-          text-decoration: none;
-          transition: var(--transition);
-          font-size: var(--font-size-sm);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .dropdown a::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          width: 3px;
-          background: var(--primary-color);
-          transform: translateX(-100%);
-          transition: transform 0.3s ease;
-        }
-
-        .dropdown a:hover::before {
-          transform: translateX(0);
-        }
-
-        .dropdown a:hover {
-          background: var(--light-bg);
-          color: var(--primary-color);
-          padding-left: calc(var(--spacing-lg) + var(--spacing-sm));
-        }
-
-        .mobile-menu-toggle {
-          display: none;
-          flex-direction: column;
-          gap: var(--spacing-xs);
-          cursor: pointer;
-          padding: var(--spacing-sm);
-        }
-
-        .mobile-menu-toggle span {
-          width: 25px;
-          height: 2px;
-          background: var(--text-primary);
-          transition: var(--transition);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(1) {
-          transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(2) {
-          opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        /* ======== HERO SECTION ======== */
-        .hero {
-          min-height: 60vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          padding: 6.25rem var(--spacing-lg) 3.125rem;
-          background: var(--hero-gradient);
-          overflow: hidden;
-        }
-
-        .hero-bg-animation {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-          overflow: hidden;
-        }
-
-        .floating-shape {
-          position: absolute;
-          border-radius: var(--radius-full);
-          opacity: 0.08;
-          animation: float 20s infinite ease-in-out;
-        }
-
-        .shape-1 {
-          width: 300px;
-          height: 300px;
-          background: var(--primary-color);
-          top: 10%;
-          left: 10%;
-          animation-delay: 0s;
-        }
-
-        .shape-2 {
-          width: 200px;
-          height: 200px;
-          background: var(--accent-color);
-          bottom: 10%;
-          right: 10%;
-          animation-delay: 5s;
-        }
-
-        .shape-3 {
-          width: 150px;
-          height: 150px;
-          background: var(--primary-color);
-          top: 50%;
-          right: 20%;
-          animation-delay: 10s;
-        }
-
-        .shape-4 {
-          width: 100px;
-          height: 100px;
-          background: var(--accent-color);
-          bottom: 30%;
-          left: 5%;
-          animation-delay: 15s;
-        }
-
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0) rotate(0deg);
-          }
-          25% {
-            transform: translateY(-20px) rotate(5deg);
-          }
-          50% {
-            transform: translateY(-10px) rotate(-5deg);
-          }
-          75% {
-            transform: translateY(-30px) rotate(3deg);
-          }
-        }
-
-        .hero-content {
-          max-width: 1200px;
-          width: 100%;
-          z-index: 2;
-          text-align: center;
-        }
-
-        .hero-badge {
-          display: inline-block;
-          padding: var(--spacing-sm) var(--spacing-lg);
-          background: var(--accent-gradient);
-          color: var(--white);
-          border-radius: var(--radius-full);
-          font-size: var(--font-size-sm);
-          margin-bottom: var(--spacing-xl);
-          font-weight: 500;
-          animation: pulse 2s infinite;
-          box-shadow: var(--shadow-md);
-        }
-
-        .hero h1 {
-          font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
-          font-weight: 700;
-          margin-bottom: var(--spacing-xl);
-          line-height: 1.2;
-          color: var(--text-primary);
-          animation: fadeInUp 0.8s ease 0.2s;
-          animation-fill-mode: both;
-        }
-
-        .hero-subtitle {
-          font-size: var(--font-size-xl);
-          color: var(--text-secondary);
-          margin-bottom: var(--spacing-xl);
-          line-height: 1.6;
-          animation: fadeInUp 0.8s ease 0.4s;
-          animation-fill-mode: both;
-          max-width: 800px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        /* ======== LAYOUT ======== */
-        .section {
-          padding: var(--spacing-3xl) 0;
-          position: relative;
-        }
-
-        .section-light {
-          background: var(--light-bg);
-        }
-
-        .section-dark {
-          background: var(--white);
-        }
-
-        .section-header {
-          text-align: center;
-          margin-bottom: var(--spacing-3xl);
-          max-width: 700px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .section-title {
-          font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-4xl));
-          font-weight: 700;
-          margin-bottom: var(--spacing-lg);
-          color: var(--text-primary);
-          position: relative;
-          display: inline-block;
-        }
-
-        .section-title::after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 60px;
-          height: 4px;
-          background: var(--accent-gradient);
-          border-radius: var(--radius-sm);
-        }
-
-        .section-subtitle {
-          font-size: var(--font-size-xl);
-          color: var(--text-secondary);
-          line-height: 1.6;
-          margin-top: var(--spacing-lg);
-        }
-
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 var(--spacing-lg);
-        }
-
-        .grid {
-          display: grid;
-          gap: var(--spacing-xl);
-        }
-
-        .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
-        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-        .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-        .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-
-        /* ======== SERVICE/FEATURE DETAIL ======== */
-        .service-detail {
-          background: var(--white);
-          border-radius: var(--radius-lg);
-          padding: var(--spacing-2xl);
-          transition: var(--transition);
-          box-shadow: var(--shadow-md);
-          position: relative;
-          overflow: hidden;
-          animation: fadeInUp 0.8s ease;
-          animation-fill-mode: both;
-        }
-
-        .service-detail::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 4px;
-          background: var(--gradient);
-        }
-
-        .service-detail:hover {
-          transform: translateY(-10px);
-          box-shadow: var(--shadow-xl);
-        }
-
-        .service-icon {
-          width: 80px;
-          height: 80px;
-          background: rgba(0, 82, 204, 0.1);
-          border-radius: var(--radius-full);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: var(--font-size-2xl);
-          margin-bottom: var(--spacing-xl);
-          color: var(--primary-color);
-          transition: var(--transition);
-        }
-
-        .service-detail:hover .service-icon {
-          background: var(--gradient);
-          color: var(--white);
-          transform: scale(1.1) rotate(5deg);
-        }
-
-        .service-title {
-          font-size: var(--font-size-2xl);
-          font-weight: 600;
-          margin-bottom: var(--spacing-lg);
-          color: var(--text-primary);
-        }
-
-        .service-description {
-          color: var(--text-secondary);
-          line-height: 1.7;
-          font-size: var(--font-size-base);
-          margin-bottom: var(--spacing-lg);
-        }
-
-        .service-features {
-          list-style: none;
-          margin-bottom: var(--spacing-lg);
-        }
-
-        .service-features li {
-          display: flex;
-          align-items: flex-start;
-          margin-bottom: var(--spacing-sm);
-          color: var(--text-secondary);
-        }
-
-        .service-features i {
-          color: var(--primary-color);
-          margin-right: var(--spacing-sm);
-          margin-top: var(--spacing-xs);
-        }
-        
-        /* ======== BENEFITS/TRUST GRID ======== */
-        .benefits-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: var(--spacing-xl);
-        }
-
-        .benefit-card {
-          background: var(--white);
-          border-radius: var(--radius-lg);
-          padding: var(--spacing-xl);
-          box-shadow: var(--shadow-md);
-          transition: var(--transition);
-          display: flex;
-          align-items: flex-start;
-        }
-
-        .benefit-card:hover {
-          transform: translateY(-5px);
-          box-shadow: var(--shadow-xl);
-        }
-
-        .benefit-icon {
-          width: 50px;
-          height: 50px;
-          background: rgba(0, 82, 204, 0.1);
-          border-radius: var(--radius-full);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: var(--font-size-lg);
-          color: var(--primary-color);
-          margin-right: var(--spacing-lg);
-          flex-shrink: 0;
-        }
-
-        .benefit-content h3 {
-          font-size: var(--font-size-lg);
-          font-weight: 600;
-          margin-bottom: var(--spacing-sm);
-          color: var(--text-primary);
-        }
-
-        .benefit-content p {
-          color: var(--text-secondary);
-          line-height: 1.6;
-        }
-
-        /* ======== TESTIMONIALS ======== */
-        .testimonial-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .testimonial-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow-md);
-            border-left: 5px solid var(--accent-color);
-        }
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-        }
-        .testimonial-card cite {
-            font-weight: 500;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             color: var(--primary-color);
-        }
-        .testimonial-card cite span {
-            display: block;
-            font-weight: 400;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* ======== CONTACT FORM ======== */
-        .contact-form {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            font-family: var(--font-family);
-            font-size: var(--font-size-base);
-            transition: var(--transition);
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
-        }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* ======== CTA SECTION ======== */
-        .cta-section {
-          background: var(--gradient);
-          padding: var(--spacing-3xl) var(--spacing-lg);
-          text-align: center;
-          color: var(--white);
-        }
-
-        .cta-title {
-          font-size: var(--font-size-4xl);
-          font-weight: 700;
-          margin-bottom: var(--spacing-lg);
-        }
-
-        .cta-subtitle {
-          font-size: var(--font-size-xl);
-          margin-bottom: var(--spacing-xl);
-          max-width: 800px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .btn {
-          padding: var(--spacing-lg) var(--spacing-xl);
-          border: none;
-          color: var(--white);
-          text-decoration: none;
-          border-radius: var(--radius-md);
-          font-weight: 600;
-          transition: var(--transition);
-          display: inline-flex;
-          align-items: center;
-          gap: var(--spacing-sm);
-          cursor: pointer;
-          font-size: var(--font-size-base);
-          position: relative;
-          overflow: hidden;
-          box-shadow: var(--shadow-md);
-        }
-
-        .btn::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 0;
-          height: 0;
-          border-radius: var(--radius-full);
-          background: rgba(255, 255, 255, 0.2);
-          transform: translate(-50%, -50%);
-          transition: width 0.6s, height 0.6s;
-        }
-
-        .btn:hover::before {
-          width: 300px;
-          height: 300px;
-        }
-
-        .btn-white {
-          background: var(--white);
-          color: var(--primary-color);
-        }
-
-        .btn-white:hover {
-          transform: translateY(-3px);
-          box-shadow: var(--shadow-xl);
+            overflow-x: hidden;
+            background: #ffffff;
         }
         
-        #form-status {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            display: none; 
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
-
-        #form-status.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        #form-status.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
         }
-
-        /* ======== FOOTER ======== */
-        .footer {
-          background: var(--text-primary);
-          color: var(--white);
-          padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-xl);
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 4px;
         }
-
-        .footer-content {
-          max-width: 1200px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: var(--spacing-xl);
-          margin-bottom: var(--spacing-xl);
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0052a3;
         }
-
-        .footer-column h3 {
-          font-size: var(--font-size-xl);
-          font-weight: 600;
-          margin-bottom: var(--spacing-lg);
-          position: relative;
-          padding-bottom: var(--spacing-sm);
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            padding: 0;
         }
-
-        .footer-column h3::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 40px;
-          height: 3px;
-          background: var(--accent-color);
+        
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
-
-        .footer-column p {
-          color: rgba(255, 255, 255, 0.7);
-          margin-bottom: var(--spacing-lg);
-          line-height: 1.6;
+        
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
         }
-
-        .footer-links {
-          list-style: none;
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
         }
-
-        .footer-links li {
-          margin-bottom: var(--spacing-sm);
+        
+        .navbar-brand i {
+            margin-right: 10px;
+            color: var(--secondary-color);
         }
-
-        .footer-links a {
-          color: rgba(255, 255, 255, 0.7);
-          text-decoration: none;
-          transition: var(--transition);
-          display: inline-flex;
-          align-items: center;
-          gap: var(--spacing-xs);
+        
+        .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 500;
+            margin: 0 15px;
+            position: relative;
+            transition: all 0.3s ease;
         }
-
-        .footer-links a:hover {
-          color: var(--white);
-          gap: var(--spacing-sm);
-        }
-
-        .social-links {
-          display: flex;
-          gap: var(--spacing-lg);
-          margin-top: var(--spacing-lg);
-        }
-
-        .social-links a {
-          width: 40px;
-          height: 40px;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: var(--radius-full);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--white);
-          transition: var(--transition);
-        }
-
-        .social-links a:hover {
-          background: var(--accent-color);
-          transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-          text-align: center;
-          padding-top: var(--spacing-xl);
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          color: rgba(255, 255, 255, 0.7);
-          font-size: var(--font-size-sm);
-        }
-
-        /* ======== ANIMATIONS ======== */
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        /* ======== RESPONSIVE DESIGN ======== */
-        @media (max-width: 768px) {
-          .nav {
-            padding: var(--spacing-sm) var(--spacing-md);
-          }
-
-          .nav-menu {
-            display: none;
+        
+        .nav-link::after {
+            content: '';
             position: absolute;
-            top: 100%;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 10px 0;
+            margin-top: 15px;
+        }
+        
+        .dropdown-item {
+            padding: 10px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-item:hover {
+            background: var(--bg-light);
+            color: var(--secondary-color);
+            padding-left: 25px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 70vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-particles {
+            position: absolute;
+            top: 0;
             left: 0;
             width: 100%;
-            background: var(--white);
-            flex-direction: column;
-            padding: var(--spacing-lg);
-            gap: var(--spacing-sm);
-            box-shadow: var(--shadow-lg);
-          }
-
-          .nav-menu.active {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+                opacity: 0.3;
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        /* Service Section */
+        .service-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .service-detail {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+        
+        .service-detail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
+        }
+        
+        .service-detail:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 20px;
             display: flex;
-          }
-
-          .dropdown {
-            position: static;
-            opacity: 1;
-            visibility: visible;
-            transform: none;
-            margin-top: 0;
-            margin-left: var(--spacing-lg);
-            box-shadow: none;
-            border: none;
-          }
-
-          .mobile-menu-toggle {
-            display: flex;
-          }
-
-          .hero {
-            padding: 6.25rem var(--spacing-md) 3.125rem;
-          }
-
-          .section {
-            padding: var(--spacing-2xl) 0;
-          }
-
-          .container {
-            padding: 0 var(--spacing-md);
-          }
-
-          .benefits-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .footer-content {
-            grid-template-columns: 1fr;
-            text-align: center;
-          }
-
-          .footer-column h3::after {
-            left: 50%;
-            transform: translateX(-50%);
-          }
-
-          .social-links {
+            align-items: center;
             justify-content: center;
-          }
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .service-detail:hover .service-icon {
+            transform: rotate(10deg) scale(1.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .service-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .service-features li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+        
+        .service-features i {
+            color: var(--success-color);
+            margin-right: 15px;
+            margin-top: 3px;
+            font-size: 1.2rem;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            text-align: center;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 3rem;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .team-member:hover .team-avatar {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .team-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .team-position {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .team-bio {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .testimonial-content {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-info {
+            flex: 1;
+            flex-direction: column;
+        }
+        
+        .testimonial-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-role {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-rating {
+            color: var(--warning-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Form Section */
+        .contact-form-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+        }
+        
+        .form-control::placeholder {
+            color: var(--text-light);
+        }
+        
+        .btn-submit {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer ul li a:hover {
+            color: white;
+            gap: 12px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .service-title {
+                font-size: 1.5rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav">
-            <a href="index.html" class="logo">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
                 <i class="fas fa-shield-alt"></i>
                 Unified Security
             </a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown">
-                        <a href="security.html">Security Services</a>
-                        <a href="housekeeping.html">Housekeeping</a>
-                        <a href="horticulture.html">Horticulture</a>
-                        <a href="support.html">Support Staff</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="testimonials.html" class="nav-link">Testimonials</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="mobile-menu-toggle" id="mobileMenuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="security.html">Security Services</a></li>
+                            <li><a class="dropdown-item" href="housekeeping.html">Housekeeping</a></li>
+                            <li><a class="dropdown-item" href="horticulture.html">Horticulture</a></li>
+                            <li><a class="dropdown-item" href="support.html">Support Staff</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg-animation">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-            <div class="floating-shape shape-4"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-headset"></i> 24/7 Support Center
-            </div>
-            <h1>How Can We Help You?</h1>
-            <p class="hero-subtitle">
-                Your trusted partner for comprehensive security and facility management solutions. 
-                Find answers, get support, and connect with our expert team.
-            </p>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="section section-light">
+    <section class="hero-section">
+        <div class="hero-particles" id="heroParticles"></div>
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">⭐ Why Choose Us</h2>
-                <p class="section-subtitle">
-                    We are committed to delivering excellence and reliability in every service we provide.
-                </p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-user-check"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Verified & Trained Manpower</h3>
-                        <p>Our team is our strength. Every professional is rigorously verified and trained to deliver excellence.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>24/7 Operational Support</h3>
-                        <p>We are always on. Our round-the-clock support ensures your facility is secure and running smoothly at all times.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Technology & AI-Enabled Systems</h3>
-                        <p>We leverage cutting-edge technology and AI to provide smarter, more efficient, and transparent services.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Industry-Specific Expertise</h3>
-                        <p>From IT parks to hospitals, we have deep, specialized knowledge to meet the unique needs of your industry.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>PAN India Presence</h3>
-                        <p>Our extensive network across India allows us to deliver consistent and reliable services, no matter your location.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="benefit-content">
-                        <h3>Transparent MIS & KPI Tracking</h3>
-                        <p>Stay informed with our transparent Management Information Systems and Key Performance Indicator tracking.</p>
+            <div class="row align-items-center min-vh-70">
+                <div class="col-lg-12">
+                    <div class="hero-content text-center" data-aos="fade-up" data-aos-duration="1000">
+                        <h1 class="hero-title">Professional Support Staff</h1>
+                        <p class="hero-subtitle">Trained and verified manpower for office operations, pantry services, and utility support.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quality Assurance Section -->
-    <section class="section section-dark">
+    <!-- Service Overview Section -->
+    <section class="service-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">🏅 Quality Assurance</h2>
-                <p class="section-subtitle">
-                    Our commitment to quality is certified and reflected in our processes.
-                </p>
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="display-5 fw-bold">Our Support Services</h2>
+                <p class="lead">Professional manpower solutions for daily operational efficiency</p>
             </div>
-            <div class="service-detail">
-                <div class="service-icon">
-                    <i class="fas fa-certificate"></i>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="service-detail">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="service-title">Office Boys</h3>
+                        <p class="service-description">Professional staff for document handling, scanning, and administrative support</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Document handling and management</li>
+                            <li><i class="fas fa-check-circle"></i> Meeting and office preparation</li>
+                            <li><i class="fas fa-check-circle"></i> Mail room management</li>
+                            <li><i class="fas fa-check-circle"></i> Administrative support</li>
+                        </ul>
+                    </div>
                 </div>
-                <h3 class="service-title">Certified & Committed to Excellence</h3>
-                <p class="service-description">
-                    Our commitment to quality management and health & safety is internationally recognized, and every task is governed by strict Standard Operating Procedures (SOP).
-                </p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> <strong>ISO 9001:2015</strong> – Quality Management</li>
-                    <li><i class="fas fa-check"></i> <strong>ISO 45001:2018</strong> – Health & Safety</li>
-                    <li><i class="fas fa-check"></i> <strong>SOP-based</strong> cleaning & operations</li>
-                    <li><i class="fas fa-check"></i> <strong>KPI & SLA</strong> monitoring</li>
-                    <li><i class="fas fa-check"></i> <strong>Monthly audits</strong> & reports</li>
-                    <li><i class="fas fa-check"></i> <strong>Real-time supervision</strong> & monitoring</li>
-                </ul>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="service-detail">
+                        <div class="service-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <h3 class="service-title">Pantry Boys</h3>
+                        <p class="service-description">Trained staff for beverage preparation, service, and pantry hygiene maintenance</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Tea, coffee, and beverage preparation</li>
+                            <li><i class="fas fa-check-circle"></i> Pantry hygiene and utensil washing</li>
+                            <li><i class="fas fa-check-circle"></i> Inventory management and stock replenishment</li>
+                            <li><i class="fas fa-check-circle"></i> Meeting and conference room setup</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="service-detail">
+                        <div class="service-icon">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <h3 class="service-title">Utility Staff</h3>
+                        <p class="service-description">Multi-skilled personnel for various operational support needs, from material handling to maintenance assistance</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Shift assistance and material handling</li>
+                            <li><i class="fas fa-check-circle"></i> Basic maintenance support</li>
+                            <li><i class="fas fa-check-circle"></i> Event setup and breakdown</li>
+                            <li><i class="fas fa-check-circle"></i> Logistic support</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="service-detail">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="service-title">Support Staff Overview</h3>
+                        <p class="service-description">Comprehensive support staff solutions tailored to your specific industry needs with verified, trained, and uniformed personnel.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Background-verified professionals</li>
+                            <li><i class="fas fa-check-circle"></i> Industry-specific training</li>
+                            <li><i class="fas fa-check-circle"></i> Customized uniform and equipment</li>
+                            <li><i class="fa-check-circle"></i> Flexible staffing solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <div class="service-detail">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="service-title">Our Process</h3>
+                        <p class="service-description">Systematic recruitment, training, and deployment process ensuring the right personnel for your needs.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Thorough background verification</li>
+                            <i class="a fas fa-check-circle"></i> Industry-specific skill assessment</li>
+                            <i class="fas fa-check-circle"></i> Comprehensive onboarding program</li>
+                            <i class="fas fa-check-circle"></i> Continuous training and development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="display-5 fw-bold">Client Benefits</h2>
+                <p class="lead">Experience the difference with our professional support staff services</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Professional Staff</h3>
+                            <p>Background-verified, professionally trained, and uniformed personnel representing your brand</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Flexibility</h3>
+                            <p>Flexible staffing solutions to meet your changing needs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Quality Assurance</h3>
+                            <p>Strict quality standards and regular performance evaluations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="benefit-card">
+                        <div class="cost-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Cost Effective</h3>
+                            <p>Optimized staffing solutions without compromising quality</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Performance Tracking</h3>
+                            <p>Regular performance monitoring and reporting</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="section section-light">
+    <section class="testimonials-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">🗣️ Testimonials</h2>
-                <p class="section-subtitle">
-                    Hear what our valued clients have to say about our services.
-                </p>
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="display-5 fw-bold">Client Testimonials</h2>
+                <p class="lead">Hear what our clients say about our support staff services</p>
             </div>
-            <div class="testimonial-container">
-                <div class="testimonial-card">
-                    <p>“Unified Security & Facility Management transformed our corporate office with their professionalism and attention to detail. Highly recommended!”</p>
-                    <cite>
-                        Ramesh Kumar
-                        <span>Operations Head, IT Solutions Pvt. Ltd.</span>
-                    </cite>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-text">
+                                "The support staff provided by Unified Security has been exceptional. Their professionalism and reliability have significantly improved our operational efficiency."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4 class="testimonial-name">Anita Sharma</h4>
+                                    <p class="testimonial-role">Operations Manager</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <p>“The housekeeping and landscaping teams are exceptional, making our office environment clean, green, and pleasant.”</p>
-                    <cite>
-                        Priya Sharma
-                        <span>Facility Manager, BPO Hub</span>
-                    </cite>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-text">
+                                "The support staff provided by Unified Security has been exceptional. Their professionalism and reliability have significantly improved our operational efficiency."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4 class="testimonial-name">Rajesh Kumar</h4>
+                                    <p class="testimonial-role">Facility Manager</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-text">
+                                "The support staff provided by Unified Security has been exceptional. Their professionalism and reliability have significantly improved our operational efficiency."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4 class="testimonial-name">Priya Nair</h4>
+                                    <p class="testimonial-role">HR Manager</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <p>“Security and emergency response were handled flawlessly. Their technology-enabled monitoring gives us peace of mind.”</p>
-                    <cite>
-                        Vikram Singh
-                        <span>HR Head, Industrial Plant</span>
-                    </cite>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-text">
+                                "The support staff provided by Unified Security has been exceptional. Their professionalism and reliability have significantly improved our operational efficiency."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4 class="testimonial-name">Vikram Singh</h4>
+                                    <p class="testimonial-role">Operations Head</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Form Section -->
-    <section class="section section-dark">
+    <section class="contact-form-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">📞 Request a Callback</h2>
-                <p class="section-subtitle">
-                    Fill out the form below, and our team will get in touch with you shortly.
-                </p>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
+                    <div class="form-card">
+                        <h2 class="mb-4">Request Support Staff</h2>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Full Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your full name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone Number *</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Enter your phone number">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="service" class="form-label">Service Interested In *</label>
+                                        <select class="form-control" id="service" name="service" required>
+                                            <option value="">--Please choose an option--</option>
+                                            <option value="Office Boys">Office Boys</option>
+                                            <option value="Pantry Boys">Pantry Management</option>
+                                            <option value="Housekeeping Staff">Housekeeping Staff</option>
+                                            <option value="Utility Staff">Utility Staff</option>
+                                            <option value="Technical Maintenance">Technical Maintenance</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="message" class="form-label">Message / Requirements</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us about your requirements"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            Request a Callback
+                        </button>
+                        <div id="formMessage" class="alert-message"></div>
+                    </form>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Business Hours</h3>
+                            <p>Our team is available to assist you during the following hours:</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</li>
+                                <li><strong>Saturday:</strong> 9:00 AM - 2:00 PM</li>
+                                <li><strong>Sunday:</strong> Closed</li>
+                                <li><strong>24/7 Emergency Support:</strong> Available</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="contact-form">
-                <form id="contact-form">
-                    <div class="grid grid-cols-2">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2">
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service" required>
-                                <option value="">--Please choose an option--</option>
-                                <option value="Security">Security</option>
-                                <option value="Housekeeping">Housekeeping</option>
-                                <option value="Horticulture">Horticulture</option>
-                                <option value="Technical Maintenance">Technical Maintenance</option>
-                                <option value="Support Staff">Support Staff</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message / Requirements</label>
-                        <textarea id="message" name="message" rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-white">Request a Callback</button>
-                    <div id="form-status"></div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="cta-title">Ready to Experience Excellence?</h2>
-            <p class="cta-subtitle">
-                Partner with us for reliable, professional, and comprehensive facility management services.
-            </p>
-            <a href="contact.html" class="btn btn-white">
-                <i class="fas fa-phone"></i> Contact Us Today
-            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>About Us</h3>
-                    <p>
-                        Unified Security & Facility Management Services Pvt. Ltd. is a multi-domain, integrated facility management company, 
-                        delivering world-class security, facility maintenance, horticulture, and manpower solutions.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>About Us</h5>
+                    <p>Unified Security & Facility Management Services Pvt. Ltd. is India's leading integrated facility management provider, offering end-to-end solutions in security, housekeeping, horticulture, and technical maintenance.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <div class="col-lg-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="security.html">Security Services</a></li>
-                        <li><a href="housekeeping.html">Housekeeping</a></li>
-                        <li><a href="horticulture.html">Horticulture</a></li>
-                        <li><a href="support.html">Support Staff</a></li>
+                <div class="col-lg-3 mb-4">
+                    <h5>Our Services</h5>
+                    <ul>
+                        <li><a href="security.html"><i class="fas fa-chevron-right"></i> Security Services</a></li>
+                        <li><a href="housekeeping.html"><i class="fas fa-chevron-right"></i> Housekeeping</a></li>
+                        <li><a href="horticulture.html"><i class="fas fa-chevron-right"></i> Horticulture</a></li>
+                        <li><a href="support.html"><i class="fas fa-chevron-right"></i> Support Staff</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Office No. 09, Hari Singh Market, Sector 63, Gurugram, Haryana, India</p>
-                    <p><i class="fas fa-phone"></i> +91 9873803921</p>
-                    <p><i class="fas fa-envelope"></i> info@unifiedfacility.in</p>
+                <div class="col-lg-3 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Office No. 09, Hari Singh Market, Sector 63, Gurugram, Haryana, India</li>
+                        <li><i class="fas fa-phone"></i> +91 9873803921</li>
+                        <li><i class="fas fa-envelope"></i> info@unifiedfacility.in</li>
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 Unified Security & Facility Management Services Pvt. Ltd. All Rights Reserved.</p>
+            <p>&copy; 2023 Unified Security & Facility Management Services Pvt. Ltd. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Inline JavaScript -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // ======== APP INITIALIZATION ========
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all components
-            initNavigation();
-            initAnimations();
-            initContactForm();
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            duration: 800
         });
 
-        // ======== NAVIGATION ========
-        function initNavigation() {
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const navMenu = document.getElementById('navMenu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const header = document.querySelector('.header');
-
-            // Mobile menu toggle
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', () => {
-                    navMenu.classList.toggle('active');
-                    mobileMenuToggle.classList.toggle('active');
-                });
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
+        });
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('nav') && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                }
-            });
-
-            // Smooth scrolling for navigation links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    
-                    if (href.startsWith('#')) {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            const offsetTop = target.offsetTop - 80;
-                            window.scrollTo({
-                                top: offsetTop,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-
-            // Header scroll effect
-            let lastScrollTop = 0;
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-
-                // Hide/show header on scroll
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    header.style.transform = 'translateY(-100%)';
-                } else {
-                    header.style.transform = 'translateY(0)';
-                }
-                
-                lastScrollTop = scrollTop;
-            });
-        }
-
-        // ======== ANIMATIONS ========
-        function initAnimations() {
-            // Add staggered animations to cards
-            const cards = document.querySelectorAll('.service-detail, .benefit-card, .testimonial-card');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.classList.add('fade-in');
-            });
-
-            // Parallax effect for hero section
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                window.addEventListener('scroll', () => {
-                    const scrolled = window.pageYOffset;
-                    const shapes = heroSection.querySelectorAll('.floating-shape');
-                    
-                    shapes.forEach((shape, index) => {
-                        const speed = 0.5 + (index * 0.1);
-                        shape.style.transform = `translateY(${scrolled * speed}px)`;
-                    });
-                });
-            }
-        }
-        
-        // ======== CONTACT FORM ========
-        function initContactForm() {
-            const form = document.getElementById('contact-form');
-            const statusDiv = document.getElementById('form-status');
-
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault(); // Prevent default form submission
-
-                    // --- In a real-world scenario, you would send this data to a server ---
-                    // For this demo, we'll simulate a successful submission.
-                    const formData = new FormData(form);
-                    console.log('Form Data Submitted:');
-                    for (let [key, value] of formData.entries()) {
-                        console.log(`${key}: ${value}`);
-                    }
-                    // ---------------------------------------------------------------------
-
-                    // Show success message
-                    statusDiv.textContent = 'Thank you! Your request has been submitted successfully. We will get back to you soon.';
-                    statusDiv.className = 'success';
-                    statusDiv.style.display = 'block';
-
-                    // Clear the form
-                    form.reset();
-
-                    // Hide the message after 10 seconds
-                    setTimeout(() => {
-                        statusDiv.style.display = 'none';
-                    }, 10000);
-                });
-            }
-        }
-
-        // Add CSS animations dynamically
-        const style = document.createElement('style');
-        style.textContent = `
-            .fade-in {
-                opacity: 0;
-                transform: translateY(30px);
-                transition: all 0.8s ease;
-                animation-fill-mode: both;
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Validate form
+            if (!validateForm(data)) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Request a Callback';
+                return;
             }
             
-            .fade-in.visible {
-                opacity: 1;
-                transform: translateY(0);
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                formMessage.className = 'alert-message success';
+                formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your request has been submitted successfully. We will get back to you soon.';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Request a Callback';
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }, 2000);
+        });
+
+        // Form Validation
+        function validateForm(data) {
+            const formMessage = document.getElementById('formMessage');
+            
+            // Name validation
+            if (!data.name || data.name.trim().length < 2) {
+                showError('Please enter a valid name');
+                return false;
             }
-        `;
-        document.head.appendChild(style);
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!data.email || !emailRegex.test(data.email)) {
+                showError('Please enter a valid email address');
+                return false;
+            }
+            
+            // Phone validation
+            const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+            if (!data.phone || !phoneRegex.test(data.phone) || data.phone.replace(/\D/g, '').length < 10) {
+                showError('Please enter a valid phone number');
+                return false;
+            }
+            
+            // Service validation
+            if (!data.service) {
+                showError('Please select a service');
+                return false;
+            }
+            
+            // Message validation
+            if (!data.message || data.message.trim().length < 10) {
+                showError('Please enter a message with at least 10 characters');
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Show Error Message
+        function showError(message) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.className = 'alert-message error';
+            formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + message;
+            formMessage.style.display = 'block';
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 3000);
+        }
     </script>
 </body>
 </html>

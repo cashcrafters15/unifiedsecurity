@@ -7,7 +7,7 @@
     <meta name="description" content="Beautiful landscaping and environmental enhancement with sustainable practices.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -339,6 +339,10 @@
             color: white;
         }
         
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
         .benefit-content h3 {
             font-size: 1.3rem;
             font-weight: 600;
@@ -622,8 +626,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
+            <!-- Logo using favicon.png -->
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-shield-alt"></i>
+                <img src="favicon.png" alt="Unified Security Logo" style="height: 30px; margin-right: 10px;">
                 Unified Security
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -645,7 +650,7 @@
                             <li><a class="dropdown-item" href="security.html">Security Services</a></li>
                             <li><a class="dropdown-item" href="housekeeping.html">Housekeeping</a></li>
                             <li><a class="dropdown-item" href="horticulture.html">Horticulture</a></li>
-                            <li><a class="dropdown-item" href="support.html">Support Staff</a></li>
+                            <li><a class="dropdown-item" href="supportstaff.html">Support Staff</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -999,7 +1004,7 @@
                         <li><a href="security.html"><i class="fas fa-chevron-right"></i> Security Services</a></li>
                         <li><a href="housekeeping.html"><i class="fas fa-chevron-right"></i> Housekeeping</a></li>
                         <li><a href="horticulture.html"><i class="fas fa-chevron-right"></i> Horticulture</a></li>
-                        <li><a href="support.html"><i class="fas fa-chevron-right"></i> Support Staff</a></li>
+                        <li><a href="supportstaff.html"><i class="fas fa-chevron-right"></i> Support Staff</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 mb-4">

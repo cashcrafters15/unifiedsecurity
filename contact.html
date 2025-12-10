@@ -809,7 +809,7 @@
 
     <!-- WhatsApp Button -->
     <div class="whatsapp-button">
-        <a href="https://wa.me/919873803921?text=Hi%20there!%20I'm%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/919958324494?text=Hi%20there!%20I'm%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
@@ -874,8 +874,8 @@
                 return;
             }
             
-            // Send email using EmailJS or similar service
-            sendEmail(data);
+            // Send WhatsApp message in background
+            sendWhatsAppMessage(data);
             
             // Show success message
             formMessage.className = 'alert-message success';
@@ -947,35 +947,24 @@
             }, 3000);
         }
 
-        // Send email function (you'll need to implement this with a service like EmailJS, Formspree, etc.)
-        function sendEmail(formData) {
-            // This is a placeholder - you need to implement actual email sending
-            // You can use services like EmailJS, Formspree, Netlify Forms, etc.
-            console.log('Sending email with data:', formData);
+        // Send WhatsApp message function
+        function sendWhatsAppMessage(formData) {
+            // Format the message with all form data
+            const whatsappMessage = `*New Inquiry from Website*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Service Interested In:* ${formData.service}\n\n*Message:* ${formData.message}`;
             
-            // Example using fetch (you'll need to set up a backend endpoint)
-            /*
-            fetch('your-email-api-endpoint', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    to: 'info@unifiedfacility.in',
-                    from: formData.email,
-                    subject: 'New Contact Form Submission',
-                    message: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Email sent successfully:', data);
-            })
-            .catch(error => {
-                console.error('Error sending email:', error);
-                showError('Failed to send message. Please try again later.');
-            });
-            */
+            // Send WhatsApp message to the specified number
+            const whatsappUrl = `https://wa.me/919958324494?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            // Create a hidden iframe to send the message in background
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = whatsappUrl;
+            document.body.appendChild(iframe);
+            
+            // Remove iframe after a short delay
+            setTimeout(() => {
+                document.body.removeChild(iframe);
+            }, 2000);
         }
 
         // Initialize particles on page load
